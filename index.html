@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ripple Legal — Workshop Facilitator Guide</title>
+<style>
+  :root {
+    --teal-dark: #0F5258;
+    --teal-mid: #4999A0;
+    --gold: #BB7B19;
+    --gold-light: #F8DE6E;
+    --green: #2E8D23;
+    --cream: #FFFEFB;
+    --bg: #f8f7f4;
+    --text: #1a1a1a;
+    --border: #e0ddd8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+  header { background: var(--teal-dark); color: var(--cream); padding: 40px 20px; text-align: center; }
+  header h1 { font-size: 2em; margin-bottom: 8px; }
+  header p { font-size: 1.1em; opacity: 0.85; }
+  header .meta { margin-top: 16px; font-family: Arial, sans-serif; font-size: 0.85em; opacity: 0.7; }
+  nav { background: #fff; border-bottom: 1px solid var(--border); padding: 12px 20px; position: sticky; top: 0; z-index: 10; }
+  nav .container { display: flex; gap: 20px; flex-wrap: wrap; }
+  nav a { text-decoration: none; color: var(--teal-dark); font-family: Arial, sans-serif; font-size: 0.85em; font-weight: 600; }
+  nav a:hover { color: var(--gold); }
+  section { background: #fff; border: 1px solid var(--border); border-radius: 8px; margin: 20px 0; padding: 24px; }
+  h2 { color: var(--teal-dark); font-size: 1.4em; margin-bottom: 16px; border-bottom: 2px solid var(--gold); padding-bottom: 8px; }
+  h3 { color: var(--teal-dark); font-size: 1.1em; margin: 16px 0 8px; }
+  .badge { display: inline-block; font-family: Arial, sans-serif; font-size: 0.7em; padding: 2px 8px; border-radius: 12px; font-weight: 600; }
+  .badge-hard { background: var(--gold); color: #fff; }
+  .badge-medium { background: var(--teal-mid); color: #fff; }
+  .badge-easy { background: var(--green); color: #fff; }
+  .badge-team { background: var(--teal-dark); color: var(--cream); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9em; margin: 12px 0; }
+  th { background: var(--teal-dark); color: var(--cream); text-align: left; padding: 10px 12px; font-family: Arial, sans-serif; font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.5px; }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+  tr:hover td { background: #f5f3ef; }
+  .tip { background: #fef9e7; border-left: 4px solid var(--gold); padding: 12px 16px; margin: 12px 0; border-radius: 0 4px 4px 0; }
+  .tip-label { font-family: Arial, sans-serif; font-size: 0.75em; font-weight: 700; color: var(--gold); text-transform: uppercase; margin-bottom: 4px; }
+  .warning { background: #fef2f2; border-left: 4px solid #c44; padding: 12px 16px; margin: 12px 0; border-radius: 0 4px 4px 0; }
+  .warning-label { font-family: Arial, sans-serif; font-size: 0.75em; font-weight: 700; color: #c44; text-transform: uppercase; margin-bottom: 4px; }
+  .card { border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .card h4 { color: var(--teal-dark); margin-bottom: 4px; }
+  .card .subtitle { font-family: Arial, sans-serif; font-size: 0.8em; color: #666; }
+  ul { padding-left: 20px; }
+  li { margin: 4px 0; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+  a { color: var(--teal-dark); }
+  .participant-card { border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin: 8px 0; border-left: 4px solid var(--teal-mid); }
+  .participant-card.advanced { border-left-color: var(--gold); }
+  .participant-card.beginner { border-left-color: var(--green); }
+  .team-header { background: var(--teal-dark); color: var(--cream); padding: 8px 16px; border-radius: 6px; margin: 20px 0 12px; font-family: Arial, sans-serif; font-size: 0.9em; }
+  code { background: #f0eeea; padding: 2px 6px; border-radius: 3px; font-size: 0.85em; }
+  .flow-step { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+  .flow-num { background: var(--gold); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: Arial; font-weight: 700; font-size: 0.85em; flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Ripple Legal — AI Workshop</h1>
+  <p>Facilitator Guide for Natalia Quintero</p>
+  <div class="meta">Tuesday, April 14, 2026 &middot; 9:00 AM – 12:00 PM PST &middot; Zoom &middot; 22 participants</div>
+</header>
+
+<nav><div class="container">
+  <a href="#quick-ref">Quick Ref</a>
+  <a href="#run-of-show">Run of Show</a>
+  <a href="#materials">Materials</a>
+  <a href="#participants">Participants</a>
+  <a href="#teams">Teams</a>
+  <a href="#exercises">Exercises</a>
+  <a href="#skills">Pre-Built Skills</a>
+  <a href="#pro-tips">Pro Tips</a>
+  <a href="#ripple-context">Ripple Context</a>
+</div></nav>
+
+<div class="container">
+
+<!-- QUICK REF -->
+<section id="quick-ref">
+<h2>Quick Reference</h2>
+<div class="grid-2">
+  <div>
+    <h3>Key Links</h3>
+    <ul>
+      <li><a href="https://docs.google.com/presentation/d/1o5MWbsWOoN5OX35dR9vi9B-NGIgQhHc5">Slide Deck (Google Slides)</a></li>
+      <li><a href="#exercises">Exercise Packages (21 personalized)</a></li>
+      <li><a href="#skills">Pre-Built Skills (4)</a></li>
+    </ul>
+  </div>
+  <div>
+    <h3>Key People</h3>
+    <ul>
+      <li><strong>Sameer Dhond</strong> — GC, engineering background, most senior</li>
+      <li><strong>Cheryl Wong</strong> — Organized everything, based in Singapore</li>
+      <li><strong>Suraj Jani & Kasra Zamani</strong> — Already built tools in Claude, your power users</li>
+    </ul>
+  </div>
+</div>
+
+<div class="warning">
+  <div class="warning-label">Know before you start</div>
+  <strong>High mistrust around AI writing.</strong> Nobody has enabled writing permissions. They want analysis and synthesis — not ghostwriting. Every exercise is framed as "synthesize my chaos," never "draft this for me."
+</div>
+</section>
+
+<!-- RUN OF SHOW -->
+<section id="run-of-show">
+<h2>Run of Show (3 hours)</h2>
+
+<div class="flow-step"><div class="flow-num">1</div><div><strong>9:00 – 9:15</strong> — Opening + Tech Check (slides 1-6). Confirm everyone has Claude desktop + connectors.</div></div>
+<div class="flow-step"><div class="flow-num">2</div><div><strong>9:15 – 9:25</strong> — Icebreaker + What's Happening in AI (slides 7-8). "Ask Claude: most absurd NDA clause?"</div></div>
+<div class="flow-step"><div class="flow-num">3</div><div><strong>9:25 – 9:55</strong> — Foundations (slides 9-22). Legal AI challenge, good/bad uses, Skills vs Plugins vs MCPs, Cowork vs Chat, Talk-Jam-Work-Tune framework.</div></div>
+<div class="flow-step"><div class="flow-num">4</div><div><strong>9:55 – 10:35</strong> — Build 1: Email Summarizer (slides 23-28). Live demo, then everyone builds their own. <strong>10 min hands-on.</strong></div></div>
+<div class="flow-step"><div class="flow-num">5</div><div><strong>10:35 – 10:50</strong> — Skills Showcase (slides 29-32). Show the 4 pre-built skills, how they were built, with vs without skill demo.</div></div>
+<div class="flow-step"><div class="flow-num">6</div><div><strong>10:50 – 11:30</strong> — Build 2: Team Breakout (slides 33-37). Teams of 4-6 build a collective skill. <strong>25 min hands-on.</strong></div></div>
+<div class="flow-step"><div class="flow-num">7</div><div><strong>11:30 – 11:45</strong> — Showcase (slide 38). Each team presents (2 min each).</div></div>
+<div class="flow-step"><div class="flow-num">8</div><div><strong>11:45 – 12:00</strong> — Wrap-up (slides 39-50). Connectors, ASK Ladder, good/bad AI, What Happens Monday, Q&A.</div></div>
+
+<div class="tip">
+  <div class="tip-label">Timing tip</div>
+  Cheryl confirmed they have lunch right after, so you can run 10-15 min over if needed. The breakout is where time will stretch — plan for it.
+</div>
+</section>
+
+<!-- MATERIALS -->
+<section id="materials">
+<h2>Materials & How to Use Them</h2>
+
+<div class="card">
+  <h4>Slide Deck (50 slides)</h4>
+  <div class="subtitle">Google Slides — shared with you as editor</div>
+  <p style="margin-top: 8px;">Adapted from the Cotulla workshop. Finance content swapped for legal. Every consulting teal theme. <strong>Slide 3 still has Mike Taylor's photo — swap in your headshot.</strong> Demo slides 25 & 31 have placeholder boxes for live screenshots.</p>
+</div>
+
+<div class="card">
+  <h4>Exercise Packages (21 folders)</h4>
+  <div class="subtitle">One per participant at ~/work/ripple-exercises/{INITIALS}/</div>
+  <p style="margin-top: 8px;">Each folder contains:</p>
+  <ul>
+    <li><code>README.md</code> — Facilitator profile + support notes (read before session)</li>
+    <li><code>email.md</code> — Pre-session outreach email (send tonight if you want)</li>
+    <li><code>00-{slug}/prompt.md</code> — Paste-ready prompt personalized to their role</li>
+    <li><code>00-{slug}/*.csv, *.json, *.md</code> — Synthetic data files (emails, Slack threads, trackers)</li>
+  </ul>
+  <p style="margin-top: 8px;"><strong>How to use during the session:</strong> When participants start Build 1, tell them to open Claude Cowork, paste the prompt, and upload the sample data files. They don't need to edit anything — it's ready to go.</p>
+</div>
+
+<div class="card">
+  <h4>Pre-Built Skills (4 SKILL.md files)</h4>
+  <div class="subtitle">At ~/work/ripple-skills/{skill-name}/SKILL.md</div>
+  <p style="margin-top: 8px;">These are the skills you'll demo and deliver to the team:</p>
+  <ol>
+    <li><strong>Email & Slack Summarizer</strong> — Catchup + Action Items + Group DM mode</li>
+    <li><strong>Daily Brief</strong> — Gmail + Slack → Overdue / Action Required / Active Contracts / FYI</li>
+    <li><strong>Counsel Brief Reviewer</strong> — 4-bucket extraction + suggested reply points</li>
+    <li><strong>Contract History Summarizer</strong> — Full deal record as reference card</li>
+  </ol>
+  <p style="margin-top: 8px;"><strong>How to use:</strong> Demo #1 live during the Skills Showcase (slides 29-31). Install all 4 in Cowork, show the with-vs-without comparison. At the end, tell them to install all 4.</p>
+</div>
+
+<div class="card">
+  <h4>Corporate Entity Dashboard Data (Cheryl's request)</h4>
+  <div class="subtitle">3 spreadsheets from Cheryl's email tonight</div>
+  <p style="margin-top: 8px;">Cheryl sent: <strong>Ripple Global IC Agreements Matrix.xlsx</strong>, <strong>D&O.xlsx</strong>, and <strong>Ripple Corporate Structure.pdf/.pptx</strong>. She wants one team to build a corporate entity dashboard showing incorporation data, parent-sub relationships, D&O, and intercompany relationships. <strong>Assign this to Team D</strong> (Cheryl's team) during the breakout.</p>
+</div>
+</section>
+
+<!-- PARTICIPANTS -->
+<section id="participants">
+<h2>Participants</h2>
+<p style="margin-bottom: 16px;">22 people. 13 responded to the pre-survey. Gold border = advanced user. Green = beginner (needs extra support).</p>
+
+<div id="participant-profiles">
+<!-- Team A -->
+<div class="team-header">Team A (5 people)</div>
+
+<div class="participant-card advanced">
+  <h4>Sameer Dhond <span class="badge badge-hard">Advanced</span> <span class="badge badge-team">Team A</span></h4>
+  <div class="subtitle">General Counsel</div>
+  <p style="margin-top: 8px;"><strong>Coverage:</strong> Full legal org — oversees all 18+ lawyers globally.</p>
+  <p><strong>Background:</strong> Former engineer. Very technical — understands code, has used Claude extensively.</p>
+  <p><strong>Exercise:</strong> GC Inbox Command Center (Hard) — 4 data files spanning all practice areas.</p>
+  <p><strong>Watch for:</strong> He may already be ahead of the room. Use him as a resource for others, or point him to stretch goals early.</p>
+  <div id="sd-linkedin" class="subtitle" style="margin-top: 4px;"></div>
+</div>
+
+<div class="participant-card">
+  <h4>Tony Martinez <span class="badge badge-medium">Intermediate</span></h4>
+  <div class="subtitle">Employment Counsel</div>
+  <p style="margin-top: 8px;"><strong>Coverage:</strong> Employment law — hiring, terminations, disputes.</p>
+  <p><strong>Exercise:</strong> Employment Thread Synthesizer (Medium)</p>
+</div>
+
+<div class="participant-card">
+  <h4>Jonny Gelfand <span class="badge badge-medium">Intermediate</span></h4>
+  <div class="subtitle">M&A Associate</div>
+  <p style="margin-top: 8px;"><strong>Coverage:</strong> M&A / Corporate Development. Works under Nadium Jinnah.</p>
+  <p><strong>Exercise:</strong> M&A Deal Thread Tracker (Medium)</p>
+</div>
+
+<div class="participant-card">
+  <h4>Zara Fung <span class="badge badge-medium">Intermediate</span></h4>
+  <div class="subtitle">APAC Counsel</div>
+  <p style="margin-top: 8px;"><strong>Coverage:</strong> APAC legal, cross-border work. Works under Cheryl Wong.</p>
+  <p><strong>Exercise:</strong> APAC Legal Thread Synthesizer (Medium)</p>
+</div>
+
+<div class="participant-card">
+  <h4>Andrew Rosenberg <span class="badge badge-medium">Intermediate</span></h4>
+  <div class="subtitle">Compliance</div>
+  <p style="margin-top: 8px;"><strong>Coverage:</strong> Compliance. Added late (one of the 4 compliance additions).</p>
+  <p><strong>Exercise:</strong> Compliance Thread Synthesizer (Easy-Medium)</p>
+</div>
+
+<!-- Team B -->
+<div class="team-header">Team B (5 people)</div>
+
+<div class="participant-card advanced">
+  <h4>Deborah McCrimmon <span class="badge badge-hard">Advanced</span></h4>
+  <div class="subtitle">Deputy General Counsel — Litigation, Employment, RippleX, Corporate</div>
+  <p style="margin-top: 8px;"><strong>Coverage:</strong> Broad oversight — litigation, employment, RippleX, corporate. Second most senior after Sameer.</p>
+  <p><strong>Exercise:</strong> Multi-Practice Briefing (Hard) — 4 data files across practice areas.</p>
+</div>
+
+<div class="participant-card">
+  <h4>Kristen Benadom <span class="badge badge-medium">Intermediate</span></h4>
+  <div class="subtitle">Treasury Counsel</div>
+  <p style="margin-top: 8px;"><strong>Coverage:</strong> Ripple treasury legal matters.</p>
+  <p><strong>Exercise:</strong> Treasury Legal Synthesizer (Medium)</p>
+</div>
+
+<div class="participant-card">
+  <h4>Rosa Chen <span class="badge badge-medium">Intermediate</span></h4>
+  <div class="subtitle">Payments Counsel</div>
+  <p style="margin-top: 8px;"><strong>Coverage:</strong> Payments — Ripple's core business area.</p>
+  <p><strong>Exercise:</strong> Payments Legal Synthesizer (Medium)</p>
+</div>
+
+<div class="participant-card">
+  <h4>Punir <span class="badge badge-medium">Intermediate</span></h4>
+  <div class="subtitle">Custody Counsel</div>
+  <p style="margin-top: 8px;"><strong>Coverage:</strong> Custody-related legal work (Ripple Custody product).</p>
+  <p><strong>Exercise:</strong> Custody Legal Synthesizer (Medium)</p>
+</div>
+
+<div class="participant-card advanced">
+  <h4>Suraj Jani <span class="badge badge-hard">Advanced</span></h4>
+  <div class="subtitle">Compliance</div>
+  <p style="margin-top: 8px;"><strong>Coverage:</strong> Compliance. <strong>Has already built tools in Claude Chat.</strong></p>
+  <p><strong>Exercise:</strong> Compliance Inbox Command Center (Hard) — 4 data files including regulatory tracker.</p>
+  <p><strong>Watch for:</strong> Power user. Can help others in Team B. Good candidate to demo during showcase.</p>
+</div>
+
+<!-- Team C -->
+<div class="team-header">Team C (5 people)</div>
+
+<div class="participant-card advanced">
+  <h4>Wansun Song <span class="badge badge-hard">Advanced</span></h4>
+  <div class="subtitle">Deputy General Counsel — Payments, RLUSD, Trading, Custody, Treasury</div>
+  <p style="margin-top: 8px;"><strong>Coverage:</strong> Very broad — payments, RLUSD, trading, custody, treasury. Deputy GC with product-facing oversight.</p>
+  <p><strong>Exercise:</strong> Deputy GC Product Command Center (Hard) — 4 data files across all product lines.</p>
+</div>
+
+<div class="participant-card">
+  <h4>Siaw Hui <span class="badge badge-medium">Intermediate</span></h4>
+  <div class="subtitle">APAC Counsel</div>
+  <p style="margin-top: 8px;"><strong>Coverage:</strong> APAC legal. Works under Cheryl Wong.</p>
+  <p><strong>Exercise:</strong> APAC Inbox Synthesizer (Medium)</p>
+</div>
+
+<div class="participant-card">
+  <h4>Ana Guardado <span class="badge badge-medium">Intermediate</span></h4>
+  <div class="subtitle">Litigation Counsel</div>
+  <p style="margin-top: 8px;"><strong>Coverage:</strong> Litigation matters. Works under Deborah.</p>
+  <p><strong>Exercise:</strong> Litigation Inbox Synthesizer (Medium)</p>
+</div>
+
+<div class="participant-card beginner">
+  <h4>Oaka Assoon <span class="badge badge-easy">Beginner</span></h4>
+  <div class="subtitle">Corporate Paralegal</div>
+  <p style="margin-top: 8px;"><strong>Coverage:</strong> Corporate support — paralegal role.</p>
+  <p><strong>Exercise:</strong> Corporate Inbox Organizer (Easy) — 2 simpler data files, step-by-step guided prompt.</p>
+  <p><strong>Watch for:</strong> May need hands-on support. Simpler exercise by design. Pair with Kasra (advanced) on Team C.</p>
+</div>
+
+<div class="participant-card advanced">
+  <h4>Kasra Zamani <span class="badge badge-hard">Advanced</span></h4>
+  <div class="subtitle">Compliance</div>
+  <p style="margin-top: 8px;"><strong>Coverage:</strong> Compliance. <strong>Has already built tools in Claude Chat.</strong></p>
+  <p><strong>Exercise:</strong> Compliance Intel Synthesizer (Hard) — includes regulatory alerts doc covering FinCEN, ESMA/MiCA, MAS, VARA, OCC.</p>
+  <p><strong>Watch for:</strong> Power user. Can help Oaka during exercises. Good candidate for breakout lead.</p>
+</div>
+
+<!-- Team D -->
+<div class="team-header">Team D (6 people — largest team)</div>
+
+<div class="participant-card advanced">
+  <h4>Cheryl Wong <span class="badge badge-hard">Advanced</span></h4>
+  <div class="subtitle">APAC Lead — organized the entire workshop</div>
+  <p style="margin-top: 8px;"><strong>Coverage:</strong> APAC legal. Based in Singapore. She organized this whole training and wrote the learning goals document.</p>
+  <p><strong>Exercise:</strong> APAC Leadership Synthesizer (Hard) — includes team workload tracker, delegation recommendations.</p>
+  <p><strong>Watch for:</strong> She's your champion. She'll want the corporate entity dashboard exercise for her team's breakout.</p>
+</div>
+
+<div class="participant-card">
+  <h4>Nadium Jinnah <span class="badge badge-medium">Intermediate</span></h4>
+  <div class="subtitle">M&A / Corporate Development</div>
+  <p style="margin-top: 8px;"><strong>Coverage:</strong> Leads M&A and corporate development deals.</p>
+  <p><strong>Exercise:</strong> Deal Flow Synthesizer (Medium)</p>
+</div>
+
+<div class="participant-card">
+  <h4>Chris Myers <span class="badge badge-medium">Intermediate</span></h4>
+  <div class="subtitle">Trading Counsel</div>
+  <p style="margin-top: 8px;"><strong>Coverage:</strong> Trading-related legal work.</p>
+  <p><strong>Exercise:</strong> Trading Ops Synthesizer (Medium)</p>
+</div>
+
+<div class="participant-card">
+  <h4>Ana Haque <span class="badge badge-medium">Intermediate</span></h4>
+  <div class="subtitle">RLUSD Counsel</div>
+  <p style="margin-top: 8px;"><strong>Coverage:</strong> RLUSD (Ripple's stablecoin) legal matters.</p>
+  <p><strong>Exercise:</strong> RLUSD Legal Synthesizer (Medium)</p>
+</div>
+
+<div class="participant-card">
+  <h4>Jenn McNulty <span class="badge badge-medium">Intermediate</span></h4>
+  <div class="subtitle">Employment Counsel</div>
+  <p style="margin-top: 8px;"><strong>Coverage:</strong> Employment practice. Works under Deborah.</p>
+  <p><strong>Exercise:</strong> Employment Legal Synthesizer (Medium)</p>
+</div>
+
+<div class="participant-card">
+  <h4>Brian Spahn <span class="badge badge-medium">Intermediate</span></h4>
+  <div class="subtitle">Compliance</div>
+  <p style="margin-top: 8px;"><strong>Coverage:</strong> Compliance. Added late.</p>
+  <p><strong>Exercise:</strong> Compliance Ops Synthesizer (Medium)</p>
+</div>
+
+</div><!-- end participant-profiles -->
+</section>
+
+<!-- TEAMS -->
+<section id="teams">
+<h2>Breakout Teams</h2>
+<p>Cheryl organized these. Each team has one advanced user who can lead.</p>
+
+<table>
+<tr><th>Team</th><th>Members</th><th>Advanced Lead</th><th>Suggested Breakout Exercise</th></tr>
+<tr><td><span class="badge badge-team">A</span></td><td>Sameer, Tony, Jonny, Zara, Andrew</td><td>Sameer (GC)</td><td>NDA Review Skill (extend existing prototype)</td></tr>
+<tr><td><span class="badge badge-team">B</span></td><td>Deborah, Kristen, Rosa, Punir, Suraj</td><td>Deborah + Suraj</td><td>Daily Brief Skill</td></tr>
+<tr><td><span class="badge badge-team">C</span></td><td>Wansun, Siaw Hui, Ana G, Oaka, Kasra</td><td>Wansun + Kasra</td><td>Counsel Brief Reviewer</td></tr>
+<tr><td><span class="badge badge-team">D</span></td><td>Cheryl, Nadium, Chris, Ana H, Jenn, Brian</td><td>Cheryl</td><td><strong>Corporate Entity Dashboard</strong> (Cheryl's spreadsheets)</td></tr>
+</table>
+
+<div class="tip">
+  <div class="tip-label">Breakout tip</div>
+  Team D has 6 people (everyone else has 5). Cheryl specifically wants the dashboard exercise — she sent the data tonight. Give Team D the spreadsheets and let Cheryl lead. The other teams can pick from the pre-built skills or build their own.
+</div>
+</section>
+
+<!-- EXERCISES -->
+<section id="exercises">
+<h2>Exercise Packages</h2>
+<p>21 personalized packages. Each has a paste-ready prompt + synthetic data files tailored to their role at Ripple.</p>
+
+<table>
+<tr><th>Folder</th><th>Person</th><th>Exercise</th><th>Complexity</th><th>Files</th></tr>
+<tr><td>SD/</td><td>Sameer Dhond</td><td>GC Inbox Command Center</td><td><span class="badge badge-hard">Hard</span></td><td>4</td></tr>
+<tr><td>TM/</td><td>Tony Martinez</td><td>Employment Thread Synthesizer</td><td><span class="badge badge-medium">Medium</span></td><td>3</td></tr>
+<tr><td>JG/</td><td>Jonny Gelfand</td><td>M&A Deal Thread Tracker</td><td><span class="badge badge-medium">Medium</span></td><td>3</td></tr>
+<tr><td>ZF/</td><td>Zara Fung</td><td>APAC Legal Thread Synthesizer</td><td><span class="badge badge-medium">Medium</span></td><td>3</td></tr>
+<tr><td>AR/</td><td>Andrew Rosenberg</td><td>Compliance Thread Synthesizer</td><td><span class="badge badge-medium">Easy-Med</span></td><td>3</td></tr>
+<tr><td>DM/</td><td>Deborah McCrimmon</td><td>Multi-Practice Briefing</td><td><span class="badge badge-hard">Hard</span></td><td>4</td></tr>
+<tr><td>KB/</td><td>Kristen Benadom</td><td>Treasury Legal Synthesizer</td><td><span class="badge badge-medium">Medium</span></td><td>3</td></tr>
+<tr><td>RC/</td><td>Rosa Chen</td><td>Payments Legal Synthesizer</td><td><span class="badge badge-medium">Medium</span></td><td>3</td></tr>
+<tr><td>P/</td><td>Punir</td><td>Custody Legal Synthesizer</td><td><span class="badge badge-medium">Medium</span></td><td>3</td></tr>
+<tr><td>SJ/</td><td>Suraj Jani</td><td>Compliance Inbox Command Center</td><td><span class="badge badge-hard">Hard</span></td><td>4</td></tr>
+<tr><td>WS/</td><td>Wansun Song</td><td>Deputy GC Product Command Center</td><td><span class="badge badge-hard">Hard</span></td><td>4</td></tr>
+<tr><td>SH/</td><td>Siaw Hui</td><td>APAC Inbox Synthesizer</td><td><span class="badge badge-medium">Medium</span></td><td>3</td></tr>
+<tr><td>AG/</td><td>Ana Guardado</td><td>Litigation Inbox Synthesizer</td><td><span class="badge badge-medium">Medium</span></td><td>3</td></tr>
+<tr><td>OA/</td><td>Oaka Assoon</td><td>Corporate Inbox Organizer</td><td><span class="badge badge-easy">Easy</span></td><td>2</td></tr>
+<tr><td>KZ/</td><td>Kasra Zamani</td><td>Compliance Intel Synthesizer</td><td><span class="badge badge-hard">Hard</span></td><td>3</td></tr>
+<tr><td>CW/</td><td>Cheryl Wong</td><td>APAC Leadership Synthesizer</td><td><span class="badge badge-hard">Hard</span></td><td>3</td></tr>
+<tr><td>NJ/</td><td>Nadium Jinnah</td><td>Deal Flow Synthesizer</td><td><span class="badge badge-medium">Medium</span></td><td>2</td></tr>
+<tr><td>CM/</td><td>Chris Myers</td><td>Trading Ops Synthesizer</td><td><span class="badge badge-medium">Medium</span></td><td>2</td></tr>
+<tr><td>AH/</td><td>Ana Haque</td><td>RLUSD Legal Synthesizer</td><td><span class="badge badge-medium">Medium</span></td><td>2</td></tr>
+<tr><td>JM/</td><td>Jenn McNulty</td><td>Employment Legal Synthesizer</td><td><span class="badge badge-medium">Medium</span></td><td>2</td></tr>
+<tr><td>BS/</td><td>Brian Spahn</td><td>Compliance Ops Synthesizer</td><td><span class="badge badge-medium">Medium</span></td><td>2</td></tr>
+</table>
+</section>
+
+<!-- PRE-BUILT SKILLS -->
+<section id="skills">
+<h2>Pre-Built Skills</h2>
+<p>4 skills built specifically for Ripple's legal team. Demo these during the session and deliver for them to install.</p>
+
+<div class="grid-2">
+  <div class="card">
+    <h4>1. Email & Slack Summarizer</h4>
+    <p>Two modes: <strong>Catchup</strong> (what happened + status) and <strong>Action Items</strong> (what you need to do). Special Group DM mode groups by topic, not chronology.</p>
+    <p><strong>Triggers:</strong> "summarize this thread", "catch me up on", "what do I need to do"</p>
+  </div>
+  <div class="card">
+    <h4>2. Daily Brief</h4>
+    <p>Pulls Gmail + Slack simultaneously. Classifies into: <strong>Overdue</strong>, <strong>Action Required</strong>, <strong>Active Contracts</strong>, <strong>FYI</strong>. Deduplicates across sources.</p>
+    <p><strong>Triggers:</strong> "daily brief", "brief me", "what's on my plate today"</p>
+  </div>
+  <div class="card">
+    <h4>3. Counsel Brief Reviewer</h4>
+    <p>Extracts 4 things from external counsel emails: <strong>Actions for Ripple</strong>, <strong>Questions from counsel</strong>, <strong>Needs business input</strong>, <strong>Counsel working on</strong>. Plus suggested reply points.</p>
+    <p><strong>Triggers:</strong> "what does [lawyer] want us to do", "action items from this memo"</p>
+  </div>
+  <div class="card">
+    <h4>4. Contract History Summarizer</h4>
+    <p>Full deal record: <strong>Agreements on file</strong> (by Ripple entity — RMA/RMDE/RPESA/BVI), <strong>Amendments</strong>, <strong>Deviations from standard terms</strong>, <strong>Open items</strong>.</p>
+    <p><strong>Triggers:</strong> "What did we sign with [customer]?", "What are [customer]'s terms?"</p>
+  </div>
+</div>
+</section>
+
+<!-- PRO TIPS -->
+<section id="pro-tips">
+<h2>Pro Tips</h2>
+
+<div class="tip">
+  <div class="tip-label">The room dynamics</div>
+  <strong>8 of 13 survey respondents use AI "regularly and it's changed how I work."</strong> This is not a beginner room. They know the basics. The value is in <em>Skills + Cowork + persistence</em> — that's what they can't figure out alone. Don't spend too long on fundamentals.
+</div>
+
+<div class="tip">
+  <div class="tip-label">The NDA prototype</div>
+  One of Cheryl's team members already built an NDA review tool using a paralegal's playbook. It's a prototype ready to go live. <strong>Validate this publicly.</strong> Say "your team is already ahead of most organizations we work with." Then show how Skills formalize what they've started.
+</div>
+
+<div class="tip">
+  <div class="tip-label">The compliance team</div>
+  4 compliance people were added late. <strong>Suraj and Kasra are your secret weapons</strong> — they've already built tools in Claude Chat. Spread them across teams (they're in B and C). If anyone gets stuck during exercises, route them to Suraj or Kasra.
+</div>
+
+<div class="tip">
+  <div class="tip-label">The Cowork gap</div>
+  Cheryl flagged that the compliance team built amazing dashboards in Claude <em>Chat</em> but has to rebuild them every day because they're not using Cowork. <strong>This is your best "aha" moment.</strong> When you show Cowork vs Chat (slide 18), call this out directly: "Some of you have already experienced this pain."
+</div>
+
+<div class="tip">
+  <div class="tip-label">The writing resistance</div>
+  When Cheryl said "the challenge isn't putting things into writing," she was speaking for the room. <strong>Do not demo ghostwriting or email drafting.</strong> Every exercise is analysis/synthesis. The moment you show "summarize 50 emails into 3 action items" they'll get it — because that IS their pain.
+</div>
+
+<div class="tip">
+  <div class="tip-label">Cheryl's dashboard ask</div>
+  Tonight (Monday evening), Cheryl sent 3 spreadsheets and asked: "Can we build a corporate entity dashboard tomorrow?" <strong>Yes.</strong> This is Team D's breakout exercise. She sent IC agreements matrix, D&O info, and corporate structure. Have the files ready.
+</div>
+
+<div class="warning">
+  <div class="warning-label">Session is virtual, not in-person</div>
+  Originally planned as in-person SF offsite. Natalia confirmed virtual via Zoom. The team IS together in a room — but you're remote. Ask Cheryl to have people unmute when presenting during the showcase.
+</div>
+</section>
+
+<!-- SURVEY HIGHLIGHTS -->
+<section id="survey">
+<h2>Survey Highlights (13 of 22 responded)</h2>
+
+<table>
+<tr><th>AI Usage Level</th><th>Count</th></tr>
+<tr><td>Regular — changed how I work</td><td>8</td></tr>
+<tr><td>Occasionally when useful</td><td>4</td></tr>
+<tr><td>Tried but not a habit</td><td>1</td></tr>
+</table>
+
+<h3>What They Want AI to Help With (from survey)</h3>
+<ul>
+  <li>Summarizing redlines for the business to understand</li>
+  <li>Contract review, comparing versions of agreements</li>
+  <li>NDA reviews and tracking</li>
+  <li>Automating standard forms (repetitive party name entry)</li>
+  <li>Inbox triage, daily briefings, Slack digests</li>
+  <li>Board prep, invoice review, slide preparation</li>
+  <li>Precedent library and contract redlining tools</li>
+  <li>Research and know-how tools</li>
+  <li>Marketing content review without handing it off</li>
+</ul>
+
+<h3>Tools Already in Use</h3>
+<p>Claude (most common), Gemini (universal starting point), GC-AI, Ivo (NDA tool), NotebookLM, LinkSquares, ChatGPT, CoPilot</p>
+</section>
+
+<!-- RIPPLE CONTEXT -->
+<section id="ripple-context">
+<h2>Ripple Context</h2>
+<p>Enough to speak their language, not enough to pretend you're a crypto lawyer.</p>
+
+<h3>What Ripple Does</h3>
+<p>Crypto/payments company. Core products: <strong>XRP</strong> (cryptocurrency), <strong>RLUSD</strong> (stablecoin launched 2024), <strong>On-Demand Liquidity</strong> (cross-border payments using XRP), <strong>Ripple Payments</strong>, <strong>Ripple Custody</strong>.</p>
+
+<h3>Legal Entities</h3>
+<table>
+<tr><th>Entity</th><th>What It Does</th></tr>
+<tr><td>RMA (Ripple Markets Americas)</td><td>US operations</td></tr>
+<tr><td>RMDE (Ripple Markets DMCC Europe)</td><td>European operations (Dubai-based)</td></tr>
+<tr><td>RPESA (Ripple Payment Services SA)</td><td>Payment services</td></tr>
+<tr><td>BVI Entity</td><td>Offshore holding structure</td></tr>
+</table>
+
+<h3>Why Their Legal Team Is Unique</h3>
+<ul>
+  <li><strong>Multi-jurisdictional:</strong> US (SEC, CFTC, FinCEN, NYDFS), Singapore (MAS), EU (MiCA/ESMA), UK (FCA), UAE (VARA)</li>
+  <li><strong>Post-SEC settlement:</strong> Ripple settled with the SEC in 2024 after a landmark case about whether XRP is a security. The legal team lived through this.</li>
+  <li><strong>Stablecoin regulation:</strong> RLUSD launched under NYDFS approval — heavy compliance burden</li>
+  <li><strong>Global team:</strong> Lawyers in SF, Singapore, and elsewhere. Time zones are a constant challenge.</li>
+</ul>
+
+<div id="ripple-briefing-placeholder"></div>
+</section>
+
+<footer style="text-align: center; padding: 40px; color: #999; font-family: Arial; font-size: 0.8em;">
+  Prepared by Claudie &middot; Every Consulting &middot; April 13, 2026
+</footer>
+
+</div><!-- end container -->
+</body>
+</html>
